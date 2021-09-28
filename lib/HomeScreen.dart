@@ -36,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
   }
 
   void onCollapsed(bool value) {
+    print("collapsed? $value");
     if (this.isCollapsed == value) return;
     setState(() => this.isCollapsed = value);
   }

@@ -56,15 +56,15 @@ class FAppBar extends SliverAppBar {
         children: [
           Text(
             "App Title",
-            // style: textTheme.subtitle1?.copyWith(color: Colors.amber),
+            style: textTheme.subtitle1?.copyWith(color: Colors.amber),
             // strutStyle: Helper.buildStrutStyle(textTheme.subtitle1),
           ),
-          const SizedBox(height: 4.0),
-          Text(
-            "40 mins",
-            style: textTheme.caption?.copyWith(color: Colors.red),
-            // strutStyle: Helper.buildStrutStyle(textTheme.caption),
-          ),
+          // const SizedBox(height: 4.0),
+          // Text(
+          //   "40 mins",
+          //   style: textTheme.caption?.copyWith(color: Colors.red),
+          //   // strutStyle: Helper.buildStrutStyle(textTheme.caption),
+          // ),
         ],
       ),
     );
@@ -104,10 +104,11 @@ class FAppBar extends SliverAppBar {
         ) {
           // print("width : ${constraints.maxWidth}");
           final top = constraints.constrainHeight();
-          final collapsedHeight = MediaQuery.of(context).viewPadding.top + 56 + 48;
+          final collapsedHeight = MediaQuery.of(context).viewPadding.top + 70 + 48;
           WidgetsBinding.instance?.addPostFrameCallback((timeStamp) {
             onCollapsed(collapsedHeight != top);
           });
+            print("top $top | collapsed height $collapsedHeight");
 
       return FlexibleSpaceBar(
         collapseMode: CollapseMode.pin,
